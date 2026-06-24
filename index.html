@@ -416,13 +416,19 @@
       </div>
     </div>
 
-    <!-- Row 3: detail shots — Victoria kitchen · Strand master bathroom -->
-    <div class="photo-grid two" style="gap:14px; margin-top:14px;">
+    <!-- Row 3: four wide detail shots -->
+    <div class="photo-grid four" style="gap:14px; margin-top:14px;">
       <div class="photo lb">
-        <img src="img/victoria/02.jpg" alt="Casa Victoria — Kitchen" style="aspect-ratio:16/9; object-fit:cover; width:100%;" />
+        <img src="img/yugen/03.jpg" alt="Casa Yugen" style="aspect-ratio:3/2; object-fit:cover; width:100%;" />
       </div>
       <div class="photo lb">
-        <img src="img/strand/02.jpg" alt="Casa Strand — Master Bathroom" style="aspect-ratio:16/9; object-fit:cover; width:100%;" />
+        <img src="img/maxima/03.jpg" alt="Casa Maxima" style="aspect-ratio:3/2; object-fit:cover; width:100%;" />
+      </div>
+      <div class="photo lb">
+        <img src="img/victoria/02.jpg" alt="Casa Victoria — Kitchen" style="aspect-ratio:3/2; object-fit:cover; width:100%;" />
+      </div>
+      <div class="photo lb">
+        <img src="img/strand/02.jpg" alt="Casa Strand — Master Bathroom" style="aspect-ratio:3/2; object-fit:cover; width:100%;" />
       </div>
     </div>
   </div>
@@ -629,34 +635,33 @@
 </footer>
 
 <!-- LIGHTBOX -->
-<div id="lb-overlay" style="display:none; position:fixed; z-index:9000; inset:0; background:rgba(0,0,0,0.92); cursor:zoom-out; align-items:center; justify-content:center;">
+<div id="lb-overlay" style="position:fixed; z-index:9000; inset:0; background:rgba(0,0,0,0.92); cursor:zoom-out; align-items:center; justify-content:center; display:none;">
   <img id="lb-img" style="max-width:92vw; max-height:92vh; object-fit:contain; display:block;" />
 </div>
 
 <style>
   .photo.lb img { cursor: zoom-in; }
-  #lb-overlay { display: none; }
-  #lb-overlay.active { display: flex; }
 </style>
 
 <script>
-  document.querySelectorAll('.photo.lb img').forEach(img => {
-    img.addEventListener('click', () => {
-      document.getElementById('lb-img').src = img.src;
-      document.getElementById('lb-overlay').classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
-  });
-  document.getElementById('lb-overlay').addEventListener('click', () => {
-    document.getElementById('lb-overlay').classList.remove('active');
+  const lbOverlay = document.getElementById('lb-overlay');
+  const lbImg = document.getElementById('lb-img');
+
+  function lbOpen(src) {
+    lbImg.src = src;
+    lbOverlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function lbClose() {
+    lbOverlay.style.display = 'none';
     document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.photo.lb img').forEach(img => {
+    img.addEventListener('click', () => lbOpen(img.src));
   });
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      document.getElementById('lb-overlay').classList.remove('active');
-      document.body.style.overflow = '';
-    }
-  });
+  lbOverlay.addEventListener('click', lbClose);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') lbClose(); });
 </script>
 </body>
 </html>
