@@ -384,11 +384,8 @@
     <h2 class="headline" style="max-width:560px;">The kind of spaces our clients come to work in.</h2>
     <p style="color:var(--ink-soft); font-size:15px; max-width:560px; line-height:1.65; margin-bottom:32px;">These are curated residential environments. Our clients choose them specifically because they are quiet, private, and residential in character — the opposite of a venue.</p>
 
-    <!--
-      PHOTO LAYOUT: 4-up grid. Slots 3 and 4 are placeholders for San Andres and Caeli.
-      To add: copy images to img/san-andres/ and img/caeli/, then update src attributes below.
-    -->
-    <div class="photo-grid four" style="gap:14px;">
+    <!-- Row 1: three properties -->
+    <div class="photo-grid three" style="gap:14px;">
       <div class="photo">
         <img src="img/maxima/02.jpg" alt="Casa Maxima" style="aspect-ratio:3/4; object-fit:cover;" />
         <p class="photo-caption">Casa Maxima</p>
@@ -401,19 +398,31 @@
         <img src="img/san-andres/02.jpg" alt="Casa San Andres" style="aspect-ratio:3/4; object-fit:cover;" />
         <p class="photo-caption">Casa San Andres</p>
       </div>
+    </div>
+
+    <!-- Row 2: three more properties -->
+    <div class="photo-grid three" style="gap:14px; margin-top:14px;">
       <div class="photo">
         <img src="img/caeli/01.jpg" alt="Casa Caeli" style="aspect-ratio:3/4; object-fit:cover;" />
         <p class="photo-caption">Casa Caeli</p>
       </div>
-    </div>
-
-    <!-- Second row: wider shots -->
-    <div class="photo-grid two" style="gap:14px; margin-top:14px;">
       <div class="photo">
-        <img src="img/yugen/03.jpg" alt="Casa Yugen" style="aspect-ratio:16/9; object-fit:cover; width:100%;" />
+        <img src="img/victoria/01.jpg" alt="Casa Victoria" style="aspect-ratio:3/4; object-fit:cover;" />
+        <p class="photo-caption">Casa Victoria</p>
       </div>
       <div class="photo">
-        <img src="img/maxima/03.jpg" alt="Casa Maxima" style="aspect-ratio:16/9; object-fit:cover; width:100%;" />
+        <img src="img/strand/01.jpg" alt="Casa Strand" style="aspect-ratio:3/4; object-fit:cover;" />
+        <p class="photo-caption">Casa Strand</p>
+      </div>
+    </div>
+
+    <!-- Row 3: detail shots — Victoria kitchen · Strand master bathroom -->
+    <div class="photo-grid two" style="gap:14px; margin-top:14px;">
+      <div class="photo">
+        <img src="img/victoria/02.jpg" alt="Casa Victoria — Kitchen" style="aspect-ratio:16/9; object-fit:cover; width:100%;" />
+      </div>
+      <div class="photo">
+        <img src="img/strand/02.jpg" alt="Casa Strand — Master Bathroom" style="aspect-ratio:16/9; object-fit:cover; width:100%;" />
       </div>
     </div>
   </div>
